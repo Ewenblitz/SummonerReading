@@ -15,12 +15,10 @@ gem 'rails-i18n'
 gem 'devise', '~> 4.4'
 gem 'devise-i18n'
 
-gem 'therubyracer', :plateform => ruby
+gem 'therubyracer', :platforms => :ruby
 
-gem 'cloudinary', '~> 1.8', '=> 1.8.3'
+gem 'cloudinary', '~> 1.8', '>= 1.8.3'
 gem 'carrierwave'
-
-gem 'spring', group: :development
 
 group :development do
   gem 'binding_of_caller'
@@ -45,8 +43,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
