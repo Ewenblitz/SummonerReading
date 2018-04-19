@@ -10,6 +10,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'dotenv-rails'
 gem 'simple_form'
+gem 'sprockets'
 
 gem 'rails-i18n'
 gem 'devise', '~> 4.4'
