@@ -16,34 +16,34 @@ ActiveRecord::Schema.define(version: 20180515085257) do
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "chapters_id"
-    t.index ["chapters_id"], name: "index_bookmarks_on_chapters_id"
-    t.index ["users_id"], name: "index_bookmarks_on_users_id"
+    t.bigint "user_id"
+    t.bigint "chapter_id"
+    t.index ["chapter_id"], name: "index_bookmarks_on_chapter_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "chapters", force: :cascade do |t|
     t.string "name"
     t.integer "number"
     t.integer "pages"
-    t.bigint "tomes_id"
-    t.index ["tomes_id"], name: "index_chapters_on_tomes_id"
+    t.bigint "tome_id"
+    t.index ["tome_id"], name: "index_chapters_on_tome_id"
   end
 
   create_table "comments", force: :cascade do |t|
     t.string "commentary"
     t.integer "rating"
-    t.bigint "chapters_id"
-    t.bigint "users_id"
-    t.index ["chapters_id"], name: "index_comments_on_chapters_id"
-    t.index ["users_id"], name: "index_comments_on_users_id"
+    t.bigint "chapter_id"
+    t.bigint "user_id"
+    t.index ["chapter_id"], name: "index_comments_on_chapter_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "mangas_id"
-    t.index ["mangas_id"], name: "index_favorites_on_mangas_id"
-    t.index ["users_id"], name: "index_favorites_on_users_id"
+    t.bigint "user_id"
+    t.bigint "manga_id"
+    t.index ["manga_id"], name: "index_favorites_on_manga_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "mangas", force: :cascade do |t|
@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 20180515085257) do
     t.string "name"
     t.string "number"
     t.integer "nb_chapter"
-    t.bigint "mangas_id"
-    t.index ["mangas_id"], name: "index_tomes_on_mangas_id"
+    t.bigint "manga_id"
+    t.index ["manga_id"], name: "index_tomes_on_manga_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,12 +79,12 @@ ActiveRecord::Schema.define(version: 20180515085257) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookmarks", "chapters", column: "chapters_id"
-  add_foreign_key "bookmarks", "users", column: "users_id"
-  add_foreign_key "chapters", "tomes", column: "tomes_id"
-  add_foreign_key "comments", "chapters", column: "chapters_id"
-  add_foreign_key "comments", "users", column: "users_id"
-  add_foreign_key "favorites", "mangas", column: "mangas_id"
-  add_foreign_key "favorites", "users", column: "users_id"
-  add_foreign_key "tomes", "mangas", column: "mangas_id"
+  add_foreign_key "bookmarks", "chapters"
+  add_foreign_key "bookmarks", "users"
+  add_foreign_key "chapters", "tomes"
+  add_foreign_key "comments", "chapters"
+  add_foreign_key "comments", "users"
+  add_foreign_key "favorites", "mangas"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "tomes", "mangas"
 end

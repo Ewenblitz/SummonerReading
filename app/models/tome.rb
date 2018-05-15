@@ -1,4 +1,4 @@
 class Tome < ApplicationRecord
-  belongs_to :mangas
+  belongs_to :manga
   has_many :chapters
 end
