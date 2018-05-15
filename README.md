@@ -1,5 +1,5 @@
 # README
-# LOMER Ewen / LECCIA Christopher - Ingésup B3
+# LOMER Ewen / LECCIA Christopher / LEMARIE Antoine - Ingésup B3
 
 
 * Ruby version : ``2.4.3``
