@@ -5,7 +5,7 @@ class MangasController < ApplicationController
 
   def show
     @mangas = Manga.find(params[:id])
-    @new_comment = Comment.new
+
   end
 
 
