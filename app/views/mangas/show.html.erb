@@ -1,0 +1,30 @@
+<div class = "mangas">
+  <h1><%= @mangas.name %></h1>
+  
+  <section class = "row mangas">
+    <div class = "col-sm-4">
+      <%= cl_image_tag(@mangas.photo, width: 300, height: 200, crop: :fill, class: "picture") %>
+    </div>
+    <div class = "col-sm-8">
+      <p>
+        Autheur : <%= @mangas.athor %>
+      </p>
+      <p>
+        Synopsys : <%= @mangas.synopsys %>
+      </p>
+      <p>
+        Nombre Tomes : <%= @mangas.nb_tome %>
+      </p>
+    </div>
+  </section>
+</div>
+
+<div class = "comment-instruction">
+  <% if user_signed_in? %>
+    <%= render "comment/form", manga: @mangas, comment: @new_comment %>
+  <% else %>
+  <p>
+    Vous devez être connecter pour laisser une commentaire
+  </p>
+</div>
+<% end %>

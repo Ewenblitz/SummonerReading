@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Chapter.destroy_all
+Tome.destroy_all
+Manga.destroy_all
+
 tgr = Manga.create!(name: "Tokyo Ghoul:Re", athor:"Sui Ishida", synopsys: "Two years have passed since the CCG's raid on Anteiku. Although the atmosphere in Tokyo has changed drastically due to the increased influence of the CCG, ghouls continue to pose a problem as they have begun taking caution, especially the terrorist organization Aogiri Tree, who acknowledge the CCG's growing threat to their existence.", nb_tome: 15)
 bleach = Manga.create!(name: "Bleach", athor: "Tite Kubo", synopsys: "Ichigo Kurosaki is a high schooler with the ability to see spirits, but he has a relatively normal life -- until the day his path crosses with the Soul Reaper, Rukia Kuchiki. Rukia has a duty to guide spirits to the afterlife, but also to eradicate the masked monsters known as “Hollows”.", nb_tome: 74)
 nnt = Manga.create!(name: "Nanatsu no Taizai", athor: "Nakaba Suzuki", synopsys:"The \"Seven Deadly Sins\", a group of evil knights who conspired to overthrow the kingdom of Britannia, were said to have been eradicated by the Holy Knights, although some claim that they still live. Ten years later, the Holy Knights have staged a Coup d'état and assassinated the king, becoming the new, tyrannical rulers of the kingdom. Elizabeth, the king's daughter, sets out on a journey to find the \"Seven Deadly Sins\", and to enlist their help in taking back the kingdom.", nb_tome: 31)

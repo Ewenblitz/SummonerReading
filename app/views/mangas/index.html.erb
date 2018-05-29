@@ -1,5 +1,16 @@
-<h1>Welcome to Summoner Reading</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-<p>
-  <%= @mangas.count %>
-  </p>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+<div class="mangas">
+  <h1>Tous nos Mangas</h1>
+
+  <%- @mangas.each do |manga| -%>
+  <section class = "row manga">
+    <div class = "col-sm-4">
+      <%= cl_image_tag(manga.photo, width: 300, height: 200, crop: :fill, class: "picture") %>
+    </div>
+    <div class = "col-sm-8">
+      <h2><%= link_to(manga.name, manga_path(manga)) %></h2>
+
+    </div>
+  </section>
+  <% end %>
+</div>
