@@ -1,8 +1,17 @@
-<section class = "comment">
+<section class="comment">
   <blockquote>
     <%= comment.commentary %>
+    <hr/>
+    <p class="small text-right">
+      A noté
+      <%= comment.rating %>
+      / 5
+    </p>
   </blockquote>
-  <p class = "small text-right">
-    Par <%= comment.user.username %> le <%= l(comment.created_at.to_date, format: "%d/%m/%Y") %>
+  <p class="small text-right">
+    Par
+    <%= comment.user.username %>
+    le
+    <%= l(comment.created_at.to_date, format: "%d/%m/%Y") %>
   </p>
 </section>

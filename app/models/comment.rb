@@ -5,4 +5,5 @@ class Comment < ApplicationRecord
   validates :user, presence: true
   validates :chapter, presence: true
   validates :commentary, length: { minimum: 5 }
+  validates :rating, presence: true
 end
