@@ -8,7 +8,7 @@ class CreateMangas < ActiveRecord::Migration[5.1]
       t.string :photo
       t.integer :nb_tome
 
-      t.timestamp
+      t.timestamps
     end
   end
 end

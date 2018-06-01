@@ -1,20 +1,48 @@
-<div class = "mangas">
+<div class="mangas">
   <h1><%= @mangas.name %></h1>
 
-  <section class = "row mangas">
-    <div class = "col-sm-4">
-      <%= cl_image_tag(@mangas.photo, width: 300, height: 200, crop: :fill, class: "picture") %>
+  <section class="row mangas">
+    <div class="col-sm-4">
+      <%= cl_image_tag(@mangas.photo, width: 300, height: 200, crop: :fill) %>
     </div>
-    <div class = "col-sm-8">
+    <div class="col-sm-8">
       <p>
-        Autheur : <%= @mangas.athor %>
+        Autheur :
+        <%= @mangas.athor %>
       </p>
       <p>
-        Synopsys : <%= @mangas.synopsys %>
+        Synopsys :
+        <%= @mangas.synopsys %>
       </p>
       <p>
-        Nombre Tomes : <%= @mangas.nb_tome %>
+        Nombre Tomes :
+        <%= @mangas.nb_tome %>
       </p>
     </div>
   </section>
+  <%- @tomes.each do |tome| -%>
+    <section class="row tomes">
+      <div class="col-md-6 offset-md-3">
+        <ul>
+          <li>
+            <p>
+              Tome :
+              <%= tome.number %>
+              :
+              <%= tome.name %>
+            </p>
+            <%- @chapters.each do |chapter| -%>
+              <ul>
+                <li>
+                  <p>
+                    <%= link_to(chapter.name, chapter_path(chapter)) %>
+                  </p>
+                </li>
+              </ul>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </section>
+  <% end %>
 </div>

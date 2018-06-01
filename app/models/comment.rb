@@ -3,6 +3,6 @@ class Comment < ApplicationRecord
   belongs_to :chapter
 
   validates :user, presence: true
-  validates :mangas, presence: true
-  validates :text, length: { minimum: 5 }
+  validates :chapter, presence: true
+  validates :commentary, length: { minimum: 5 }
 end

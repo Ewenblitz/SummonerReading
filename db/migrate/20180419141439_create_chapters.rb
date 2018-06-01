@@ -6,7 +6,7 @@ class CreateChapters < ActiveRecord::Migration[5.1]
       t.integer :number
       t.integer :pages
 
-      t.timestamp
+      t.timestamps
     end
   end
 end

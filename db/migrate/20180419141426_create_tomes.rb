@@ -5,8 +5,8 @@ class CreateTomes < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :number
       t.integer :nb_chapter
-      
-      t.timestamp
+
+      t.timestamps
     end
   end
 end

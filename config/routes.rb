@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :favorites
   resources :bookmarks
-  resources :chapters, only: [:show] do resources :comments, only: [:create] end
+  resources :chapters, only: [:show] do
+    resources :comments, only: [:create]
+  end
   resources :tomes
   resources :mangas
   resources :comments

@@ -1,6 +1,6 @@
 <div class = "comment-instruction">
   <% if user_signed_in? %>
-    <%= render "comments/form", manga: @mangas, comment: @new_comment %>
+    <%= render "comments/form", chapter: @chapter, comment: @new_comment %>
   <% else %>
   <p>
     Vous devez être connecté(e) pour laisser une commentaire.
@@ -9,10 +9,10 @@
 </div>
 
 <div class = "comments">
-  <% if @manga.comments.any? %>
+  <% if @chapter.comments.any? %>
     <h2>Commentaires : </h2>
 
-    <% @manga.comments.each do |comment| %>
+    <% @chapter.comments.each do |comment| %>
       <%= render "comments/show", comment: comment %>
     <% end %>
   <% end %>

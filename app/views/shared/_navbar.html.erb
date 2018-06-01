@@ -1,5 +1,10 @@
 <div class="collapse navbar-collapse">
-  <%= link_to "Acceuil", root_path %>
+  <ul class="nav navbar-nav navbar-left">
+    <li>
+      <%= link_to "Acceuil", root_path %>
+    </li>
+  </ul>
+
   <ul class="nav navbar-nav navbar-right">
     <% if user_signed_in? %>
       <li class="dropdown">

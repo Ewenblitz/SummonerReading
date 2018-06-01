@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 20180515085257) do
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.bigint "chapter_id"
     t.index ["chapter_id"], name: "index_bookmarks_on_chapter_id"
@@ -26,11 +28,15 @@ ActiveRecord::Schema.define(version: 20180515085257) do
     t.string "name"
     t.integer "number"
     t.integer "pages"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "tome_id"
     t.index ["tome_id"], name: "index_chapters_on_tome_id"
   end
 
   create_table "comments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "commentary"
     t.integer "rating"
     t.bigint "chapter_id"
@@ -40,6 +46,8 @@ ActiveRecord::Schema.define(version: 20180515085257) do
   end
 
   create_table "favorites", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.bigint "manga_id"
     t.index ["manga_id"], name: "index_favorites_on_manga_id"
@@ -52,12 +60,16 @@ ActiveRecord::Schema.define(version: 20180515085257) do
     t.string "synopsys"
     t.string "photo"
     t.integer "nb_tome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tomes", force: :cascade do |t|
     t.string "name"
     t.string "number"
     t.integer "nb_chapter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "manga_id"
     t.index ["manga_id"], name: "index_tomes_on_manga_id"
   end
@@ -66,6 +78,8 @@ ActiveRecord::Schema.define(version: 20180515085257) do
     t.string "username"
     t.string "email"
     t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
