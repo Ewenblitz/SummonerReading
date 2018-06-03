@@ -1,0 +1,22 @@
+<div class="tomes">
+  <h1><%= @tomes.name %></h1>
+
+  <%- @chapters.each do |chapter| -%>
+  <section class="row tomes">
+    <div class="col-md-6 offset-md-3">
+      <ul>
+        <li>
+          <p>
+            <%= link_to(chapter.name, chapter_path(chapter)) %>
+            <%- if @seen == nil -%>
+            <p class = "text-muted">
+              ---- Not seen yet
+            </p>
+            <% end %>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <% end %>
+</div>
