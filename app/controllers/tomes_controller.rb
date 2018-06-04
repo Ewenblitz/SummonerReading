@@ -6,5 +6,7 @@ class TomesController < ApplicationController
 
     @chapters = Chapter.all
     @chapters = Chapter.where(tome_id: @tomes)
+
+    @chapterSeen = Chapter.find(params[:id])
   end
 end

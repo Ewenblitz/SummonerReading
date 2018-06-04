@@ -1,3 +1,11 @@
+<h1 class = "text-center"><%= @chapter.name %></h1>
+
+<div class="bookmarks">
+  <%- if user_signed_in? %>
+    <%= render "bookmarks/form", chapter: @chapter, bookmark: @new_bookmark %>
+  <% end %>
+</div>
+
 <div class = "comment-instruction">
   <% if user_signed_in? %>
     <%= render "comments/form", chapter: @chapter, comment: @new_comment %>
