@@ -2,6 +2,8 @@ class BookmarksController < ApplicationController
   before_action :authenticate_user!
   before_action :find_chapter, only: [:create]
 
+# Cette methode ne fonctionne pas je l'ai donc commenter pour ne pas faire de conflit lors de la vue d'un chapitre
+
   def create
     # if bookmark_params != nil
     #   @chapterSeen = Bookmark.new

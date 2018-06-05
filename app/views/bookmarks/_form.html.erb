@@ -1,3 +1,4 @@
+<%-# Fomulaire pour ajouter le tag -vue aux chapitre --non fonctionnel %>
 <h4>Cliquez pour valider la vue de ce chapitre</h4>
 <%= simple_form_for([chapter, bookmark]) do |s| %>
   <%= s.input :chapter_id, as: :check_boxes, collection: [['Cochez la check box', params[:chapter_id]]], label: false %>

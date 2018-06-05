@@ -1,3 +1,4 @@
+<%-# affichage principale des chapitres une fois le tome selectionné %>
 <h1 class = "text-center"><%= @chapter.name %></h1>
 
 <div class="bookmarks">
@@ -6,6 +7,7 @@
   <% end %>
 </div>
 
+<%-# Render du formulaire et des commentaires, s'il y en a %>
 <div class = "comment-instruction">
   <% if user_signed_in? %>
     <%= render "comments/form", chapter: @chapter, comment: @new_comment %>

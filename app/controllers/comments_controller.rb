@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
+# Controller pour la création de commentaire, une condition est mise en place
+# pour vérifier si le commentaire répond bien aux bonnes conditions
+
   def create
     @chapter = Chapter.find(params[:chapter_id])
     @new_comment = Comment.new(comment_params)

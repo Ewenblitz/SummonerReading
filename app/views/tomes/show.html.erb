@@ -1,3 +1,4 @@
+<%-# Affichage des chapitres qui sont dans les tomes choisis par l'utilisateur %>
 <div class="tomes">
   <h1><%= @tomes.name %></h1>
 
@@ -7,6 +8,7 @@
       <ul>
         <li>
           <p>
+            <%-# On rajoute une condition pour voir si le chapitre à déjà été vue par l'utilisateur -non fonctionnel %>
             <%= link_to(chapter.name, chapter_path(chapter)) %>
             <%- if @seen == nil -%>
             <p class = "text-muted">
